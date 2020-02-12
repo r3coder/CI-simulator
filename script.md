@@ -59,6 +59,8 @@ There are total of 8 float instance registers available to each instances. They 
 #### move
 ```move [value] [value]```: move to x,y coordinate with this instance's speed. Command pointer will not pass through until this command is fully executed.
  - ```move 5 11```: move this object to (5,11)
+#### mover
+```mover [value] [value```: move to relative x,y position
 #### end
 ```end```: end the commands. if this is not at end of the script, command executes from first line again(!)
 
