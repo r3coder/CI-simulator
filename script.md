@@ -48,13 +48,16 @@ There are total of 8 float instance registers available to each instances. They 
 ## Commands (Avaiable places)
 ### Common
 #### set
-```set [var/reg] [value]```: Set the specific variables.
+```set [var/reg] [value or var/reg]```: Set the specific variables.
+```set [var/reg] [value or var/reg] [operator] [value or var/reg]```: Set the specific variables.
  - ```set r0 3``` set this instances's r0 register to 3.0
+ - ```set r0 r0 + r1``` set this instances's r0 register to r0 and r1's addition
+ - operators: + - / //(int divide) * %
 #### tag
 ```tag [name]```: set the tag name used on jump position. Tag shouldn't start with number.
  - ```tag loops``` set the current position as ``loops```
 #### move
-```move [value] [value]: move to x,y coordinate with this instance's speed. Command pointer will not pass through until this command is fully executed.
+```move [value] [value]```: move to x,y coordinate with this instance's speed. Command pointer will not pass through until this command is fully executed.
  - ```move 5 11```: move this object to (5,11)
 #### end
 ```end```: end the commands. if this is not at end of the script, command executes from first line again(!)
@@ -67,16 +70,18 @@ There are total of 8 float instance registers available to each instances. They 
  - ```if time > 4.3 22```: if map time is bigger than 
  - available comparator: >, >=, <, <=, ==
 #### jump
-``` jump [jump position]: jump to jump location
+``` jump [jump position]```: jump to jump location
 
 ### Only useable on object.client
 List of action works like priority list with index is priority. Index doesn't need to start from 0, but game will find smallest index, and execute
+
+Actually, now I'm thinking about way the acting works to use with this only command of ```act``` which command pointer doesn't moves while client acting.
 #### act add
-```act set [index] [action] [duration]: set action to the instance
+```act set [index] [action] [duration]```: set action to the instance
  - ```act add 0 right 2``` set this object's action index 0 to move right for 2 seconds
  - Available keyword for action: idle, right, left, jump, jumpr, jumpl, crouch, power
 #### act remove
-```act remove [index]: remove index of the action. if index is not set, remove the last one. If index is ```all```, then remove all action
+```act remove [index]```: remove index of the action. if index is not set, remove the last one. If index is ```all```, then remove all action
 #### act restart
 ```act restart```: restart act from start
 
