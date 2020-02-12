@@ -25,15 +25,15 @@ Map can have total of 8 float registers
 
 ### Inst Constants
 Each instance has its own built-in constances.
-
-### Inst variables
-Each instance has its own built-in variables.
- - ```x```: (float) Instance's current x position
- - ```y```: (float) Instance's current y position
  - ```id```: (int) Instance's id
  - ```tag```: (string) Instance's tag
  - ```class```: (string) Instances' class
  - ```type```: (string) Instance's type
+ 
+### Inst variables
+Each instance has its own built-in variables.
+ - ```x```: (float) Instance's current x position
+ - ```y```: (float) Instance's current y position
  - ```enable```: (bool) ```true``` if instance is activated. Set to ```false``` to deactivate object
  - ```visible```: (bool) ```true``` if user want this object is visible. Not visible instances is not always deactivated.
  - ```speed```: (float) Current speed of the instance
